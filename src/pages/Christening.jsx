@@ -6,12 +6,7 @@ export default function Christening() {
     <section>
       <h1>Krikštynų fotografija</h1>
       <Masonry
-        breakpointCols={{
-          default: 4,
-          1100: 3,
-          700: 2,
-          500: 1
-        }}
+        breakpointCols={3}
         className="masonry-gallery"
         columnClassName="masonry-gallery-column"
       >
