@@ -40,6 +40,68 @@ nav {
   z-index: 10;
 }
 
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-label {
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.dropdown-label:hover,
+.dropdown:hover .dropdown-label {
+  color: var(--primary);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--menu-bg);
+  min-width: 200px;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  flex-direction: column;
+  z-index: 100;
+  padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.dropdown-content:hover {
+  display: flex;
+}
+
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: flex;
+}
+
+.dropdown-content a {
+  padding: 0.7rem 1.2rem;
+  color: var(--accent);
+  text-align: left;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a.active {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 4px;
+}
+
 nav a.active {
   border-bottom: 2px solid var(--accent);
   font-weight: bold;
