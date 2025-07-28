@@ -26,7 +26,8 @@ export default function Weddings() {
       {row.map((img, i) => (
         <div className="christening-gallery-img-wrapper" key={img}>
           <img
-            src={img}
+            src={`https://res.cloudinary.com/drfcjlc5n/image/upload/wedding/${img.split('/').pop()}`}
+
             alt={`Vestuvių akimirka ${rowIdx * 3 + i + 1}`}
             className="christening-gallery-img"
           />

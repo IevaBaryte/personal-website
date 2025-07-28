@@ -25,7 +25,7 @@ export default function PersonalPhotoshoots() {
       {row.map((img, i) => (
         <div className="christening-gallery-img-wrapper" key={img}>
           <img
-            src={`/images/personal/${img}`}
+            src={`https://res.cloudinary.com/drfcjlc5n/image/upload/personal/${img}`}
             alt={`Asmeninė fotosesija ${rowIdx * 3 + i + 1}`}
             className="christening-gallery-img"
           />
