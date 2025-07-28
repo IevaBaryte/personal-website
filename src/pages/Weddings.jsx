@@ -15,11 +15,26 @@ export default function Weddings() {
         <h1 className="gallery-title">Vestuvių fotosesijos</h1>
         <p className="gallery-subtitle">Tikros emocijos ir ypatingos Jūsų dienos akimirkos</p>
       </section>
-      <section className="gallery-grid">
-        {images.map((src, i) => (
-          <img key={src} src={src} alt={`Vestuvių akimirka ${i+1}`} className="gallery-img" />
-        ))}
-      </section>
+      <div className="christening-gallery-3row">
+  {images.reduce((rows, img, idx, arr) => {
+    const rowCount = 3;
+    if (!rows.length) rows = Array.from({ length: rowCount }, () => []);
+    rows[idx % rowCount].push(img);
+    return rows;
+  }, []).map((row, rowIdx) => (
+    <div className="christening-gallery-row" key={rowIdx}>
+      {row.map((img, i) => (
+        <div className="christening-gallery-img-wrapper" key={img}>
+          <img
+            src={img}
+            alt={`Vestuvių akimirka ${rowIdx * 3 + i + 1}`}
+            className="christening-gallery-img"
+          />
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
       <section className="gallery-prices">
         <h2>Kainos</h2>
         <ul>
