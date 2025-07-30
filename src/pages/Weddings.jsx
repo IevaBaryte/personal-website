@@ -14,8 +14,8 @@ export default function Weddings() {
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
-    700: 3,
-    500: 3
+    700: 1,
+    500: 1
   };
   const [lightboxIdx, setLightboxIdx] = useState(null);
   const imageUrls = images.map(img => `https://res.cloudinary.com/drfcjlc5n/image/upload/wedding/${img}`);

@@ -45,8 +45,8 @@ export default function Christening() {
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
-    700: 3,
-    500: 3
+    700: 1,
+    500: 1
   };
   const [lightboxIdx, setLightboxIdx] = useState(null);
   // Prepare full URLs for lightbox (no transformations for max quality)
