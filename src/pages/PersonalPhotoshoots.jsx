@@ -4,11 +4,11 @@ import GalleryLightbox from '../components/GalleryLightbox';
 
 export default function PersonalPhotoshoots() {
   const images = [
-    "v1753861996/bsjrobhulrltn17l2ylc.jpg",
+    "v1753861989/ye5twnkeccjshdm2nila.jpg",
     "v1753862001/fo0alsjhl5tmvm3zzqsa.jpg",
     "v1753861995/g7asotr1xt97w2hqpj28.jpg",
     "v1753861992/qu9uzzpxexel2s3hqxfv.jpg",
-    "v1753861989/ye5twnkeccjshdm2nila.jpg",
+    "v1753861996/bsjrobhulrltn17l2ylc.jpg",
     "v1753861988/itlhkbofr18wgu7y2hbu.jpg",
     "v1753861988/easnpjprog8t2vhnd1as.jpg",
     "v1753861986/egm5djhioupz6xptaymv.jpg",
@@ -98,7 +98,10 @@ export default function PersonalPhotoshoots() {
   );
   return (
     <section>
-      <h1>Asmeninės fotosesijos</h1>
+      <section className="gallery-header">
+        <h1 className="gallery-title">Asmeninės fotosesijos</h1>
+        <p className="gallery-subtitle">Jūsų asmeninės fotosesijos – tik Jums ir apie Jus.</p>
+      </section>
       <>
         <Masonry
           breakpointCols={breakpointColumnsObj}

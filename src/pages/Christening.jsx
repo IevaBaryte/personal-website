@@ -54,7 +54,10 @@ export default function Christening() {
 
   return (
     <section>
-      <h1>Krikštynų fotografija</h1>
+      <section className="gallery-header">
+        <h1 className="gallery-title">Krikštynų fotosesijos</h1>
+        <p className="gallery-subtitle">Krikštynų fotosesijos – švelnumas ir ypatingos akimirkos šeimai.</p>
+      </section>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"

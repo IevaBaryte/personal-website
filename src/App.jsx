@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import MobileNav from './components/MobileNav';
 import MainPage from './pages/MainPage';
 import Weddings from './pages/Weddings';
 import Christening from './pages/Christening';
@@ -22,50 +23,69 @@ const menu = [
 ];
 
 export default function App() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   return (
     <Router>
       <header className="site-header">
-  <nav className="main-nav">
-    {menu.slice(0, 2).map((item) =>
-      item.dropdown ? (
-        <div className="dropdown" key={item.label}>
-          <span className="dropdown-label">{item.label}</span>
-          <div className="dropdown-content">
-            {item.dropdown.map((sub) => (
-              <NavLink
-                key={sub.path}
-                to={sub.path}
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                {sub.label}
-              </NavLink>
-            ))}
-          </div>
+        <div className="header-inner">
+          {/* Mobile: logo centered, hamburger right */}
+          <img className="site-logo nav-logo mobile-logo" src="/images/grelinda-logo.png" alt="Grelinda Logo" style={{width: '100px'}}/>
+          <nav className="main-nav">
+            {/* Left side: Pagrindinis, Fotosesijos */}
+            <NavLink
+              key={menu[0].path}
+              to={menu[0].path}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              end={menu[0].path === '/'}
+            >
+              {menu[0].label}
+            </NavLink>
+            <div className="dropdown" key={menu[1].label}>
+              <span className="dropdown-label">{menu[1].label}</span>
+              <div className="dropdown-content">
+                {menu[1].dropdown.map((sub) => (
+                  <NavLink
+                    key={sub.path}
+                    to={sub.path}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
+                  >
+                    {sub.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+            {/* Center: Logo (desktop only) */}
+            <img className="site-logo nav-logo desktop-logo" src="/images/grelinda-logo.png" alt="Grelinda Logo" style={{width: '100px'}}/>
+            {/* Right side: Studijos nuoma, Kontaktai */}
+            <NavLink
+              key={menu[2].path}
+              to={menu[2].path}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              end={menu[2].path === '/'}
+            >
+              {menu[2].label}
+            </NavLink>
+            <NavLink
+              key={menu[3].path}
+              to={menu[3].path}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              end={menu[3].path === '/'}
+            >
+              {menu[3].label}
+            </NavLink>
+          </nav>
+          <button
+            className="hamburger"
+            aria-label="Atverti meniu"
+            onClick={() => setMobileNavOpen(true)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
-      ) : (
-        <NavLink
-          key={item.path}
-          to={item.path}
-          className={({ isActive }) => (isActive ? 'active' : '')}
-          end={item.path === '/'}
-        >
-          {item.label}
-        </NavLink>
-      )
-    )}
-    <img className="site-logo nav-logo" src="/images/grelinda-logo.png" alt="Grelinda Logo" style={{width: '100px'}}/>
-    {menu.slice(2).map((item) => (
-      <NavLink
-        key={item.path}
-        to={item.path}
-        className={({ isActive }) => (isActive ? 'active' : '')}
-        end={item.path === '/'}
-      >
-        {item.label}
-      </NavLink>
-    ))}
-  </nav>
-</header>
+        {mobileNavOpen && <MobileNav onClose={() => setMobileNavOpen(false)} />}
+      </header>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/vestuves" element={<Weddings />} />
