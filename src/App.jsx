@@ -24,7 +24,7 @@ const menu = [
 
 export default function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownLabelRef = React.useRef(null);
   return (
     <Router>
       <header className="site-header">
@@ -44,21 +44,18 @@ export default function App() {
             <div
               className="dropdown"
               key={menu[1].label}
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
             >
               <span
                 className="dropdown-label"
                 tabIndex={0}
-                onClick={() => setDropdownOpen((open) => !open)}
                 aria-haspopup="true"
-                aria-expanded={dropdownOpen}
+                aria-expanded="false"
+                ref={dropdownLabelRef}
               >
                 {menu[1].label}
               </span>
               <ul
                 className="dropdown-menu"
-                style={{ opacity: dropdownOpen ? 1 : 0, pointerEvents: dropdownOpen ? 'auto' : 'none' }}
               >
                 {menu[1].dropdown.map((sub) => (
                   <li key={sub.path}>
@@ -67,7 +64,9 @@ export default function App() {
                       className={({ isActive }) =>
                         'dropdown-item' + (isActive ? ' active' : '')
                       }
-                      onClick={() => setDropdownOpen(false)}
+                      onClick={() => {
+                        if (dropdownLabelRef.current) dropdownLabelRef.current.blur();
+                      }}
                     >
                       {sub.label}
                     </NavLink>

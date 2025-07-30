@@ -16,6 +16,7 @@ const menu = [
 ];
 
 export default function MobileNav({ onClose }) {
+  const [openDropdown, setOpenDropdown] = useState(null);
   // Focus trap and ESC support
   React.useEffect(() => {
     function handleKeyDown(e) {
@@ -56,24 +57,44 @@ export default function MobileNav({ onClose }) {
       >
         <button className="close-mobile-nav" onClick={onClose} aria-label="Uždaryti meniu">×</button>
         <ul>
-          {menu.map((item) => (
-            item.dropdown ? (
-              <li key={item.label} className="mobile-dropdown">
-                <span>{item.label}</span>
-                <ul>
-                  {item.dropdown.map((sub) => (
-                    <li key={sub.path}>
-                      <NavLink to={sub.path} onClick={onClose}>{sub.label}</NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li key={item.path}>
-                <NavLink to={item.path} onClick={onClose}>{item.label}</NavLink>
-              </li>
-            )
-          ))}
+          {menu.map((item, idx) => (
+  item.dropdown ? (
+    <li
+      key={item.label}
+      className={`mobile-dropdown${openDropdown === idx ? ' open' : ''}`}
+    >
+      <span
+        onClick={e => {
+          e.stopPropagation();
+          setOpenDropdown(openDropdown === idx ? null : idx);
+        }}
+        tabIndex={0}
+        style={{ cursor: 'pointer' }}
+      >
+        {item.label}
+      </span>
+      <ul>
+        {item.dropdown.map((sub) => (
+          <li key={sub.path}>
+            <NavLink
+              to={sub.path}
+              onClick={() => {
+                setOpenDropdown(null);
+                onClose();
+              }}
+            >
+              {sub.label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </li>
+  ) : (
+    <li key={item.path}>
+      <NavLink to={item.path} onClick={onClose}>{item.label}</NavLink>
+    </li>
+  )
+))}
         </ul>
       </nav>
     </>
