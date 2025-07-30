@@ -24,6 +24,7 @@ const menu = [
 
 export default function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   return (
     <Router>
       <header className="site-header">
@@ -40,19 +41,39 @@ export default function App() {
             >
               {menu[0].label}
             </NavLink>
-            <div className="dropdown" key={menu[1].label}>
-              <span className="dropdown-label">{menu[1].label}</span>
-              <div className="dropdown-content">
+            <div
+              className="dropdown"
+              key={menu[1].label}
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <span
+                className="dropdown-label"
+                tabIndex={0}
+                onClick={() => setDropdownOpen((open) => !open)}
+                aria-haspopup="true"
+                aria-expanded={dropdownOpen}
+              >
+                {menu[1].label}
+              </span>
+              <ul
+                className="dropdown-menu"
+                style={{ opacity: dropdownOpen ? 1 : 0, pointerEvents: dropdownOpen ? 'auto' : 'none' }}
+              >
                 {menu[1].dropdown.map((sub) => (
-                  <NavLink
-                    key={sub.path}
-                    to={sub.path}
-                    className={({ isActive }) => (isActive ? 'active' : '')}
-                  >
-                    {sub.label}
-                  </NavLink>
+                  <li key={sub.path}>
+                    <NavLink
+                      to={sub.path}
+                      className={({ isActive }) =>
+                        'dropdown-item' + (isActive ? ' active' : '')
+                      }
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      {sub.label}
+                    </NavLink>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             {/* Center: Logo (desktop only) */}
             <img className="site-logo nav-logo desktop-logo" src="/images/grelinda-logo.png" alt="Grelinda Logo" style={{width: '100px'}}/>

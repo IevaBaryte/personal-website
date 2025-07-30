@@ -87,7 +87,7 @@ export default function PersonalPhotoshoots() {
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
-    700: 1,
+    700: 2,
     500: 1
   };
   const [lightboxIdx, setLightboxIdx] = useState(null);
@@ -96,6 +96,7 @@ export default function PersonalPhotoshoots() {
     ? `https://res.cloudinary.com/drfcjlc5n/image/upload/${img}`
     : `https://res.cloudinary.com/drfcjlc5n/image/upload/personal/${img}`
   );
+
   return (
     <section>
       <section className="gallery-header">

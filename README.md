@@ -1,11 +1,11 @@
-# Grelinda Fotografija – Portfolio svetainė
+# Grelinda Photography – Portfolio svetainė
 
 Moderni, elegantiška ir lengvai pritaikoma fotografės Grelindos portfolio svetainė lietuvių kalba.
 
 ## Funkcionalumas
-- Pagrindinis puslapis su informacija apie fotografę, nuotraukomis, Instagram įskiepiu ir partnerio logotipu
-- Meniu: Vestuvės, Krikštynos, Asmeninės fotosesijos, Studijos nuoma, Kontaktai
-- Galerijos kiekviename skyriuje
-- Kainų informacija
+- Pagrindinis puslapis su informacija apie fotografę, nuotraukomis, Instagram įskiepiu.
+- Meniu rasite: Pagrindinis puslapis, Fotosesijos (Asmeninės, Krikštynų fotosesijos, Vestuvės), Studijos nuoma, Kontaktai   
+- Prie fotosesijų jūsų laukia darbų pavyzdžiai
+- Studijos nuomos puslapyje rasite pavyzdžius, kokio pobūdžio nuoma yra vykdoma
 - Kontaktų puslapis
 

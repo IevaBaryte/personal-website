@@ -45,7 +45,7 @@ export default function Christening() {
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
-    700: 1,
+    700: 2,
     500: 1
   };
   const [lightboxIdx, setLightboxIdx] = useState(null);
@@ -72,7 +72,7 @@ export default function Christening() {
             alt={`Krikštynų akimirka ${i + 1}`}
             className="masonry-img"
             style={{ width: '100%', display: 'block', borderRadius: '12px', marginBottom: '16px' }}
-            onClick={() => setLightboxIdx(i)}
+
           />
         ))}
       </Masonry>
