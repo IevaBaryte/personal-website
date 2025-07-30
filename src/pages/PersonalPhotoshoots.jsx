@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
+import GalleryLightbox from '../components/GalleryLightbox';
 
 export default function PersonalPhotoshoots() {
   const images = [
@@ -14,11 +15,13 @@ export default function PersonalPhotoshoots() {
     "personal9.jpg"
   ];
   const breakpointColumnsObj = {
-    default: 4,
+    default: 3,
     1100: 3,
-    700: 2,
-    500: 1
+    700: 3,
+    500: 3
   };
+  const [lightboxIdx, setLightboxIdx] = useState(null);
+  const imageUrls = images.map(img => `https://res.cloudinary.com/drfcjlc5n/image/upload/personal/${img}`);
   return (
     <section>
       <h1>Asmeninės fotosesijos</h1>
@@ -37,9 +40,11 @@ export default function PersonalPhotoshoots() {
               alt={`Asmeninė fotosesija ${i + 1}`}
               className="masonry-img"
               style={{ width: '100%', display: 'block', borderRadius: '12px', marginBottom: '16px' }}
+              onClick={() => setLightboxIdx(i)}
             />
           ))}
         </Masonry>
+        <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
         <h2>Kainos</h2>
         <ul>
           <li>Asmeninė fotosesija – 120€ (1 val.)</li>

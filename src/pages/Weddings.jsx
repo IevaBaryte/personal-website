@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
+import GalleryLightbox from '../components/GalleryLightbox';
 
 export default function Weddings() {
   const images = [
@@ -11,11 +12,13 @@ export default function Weddings() {
     "wedding6.jpg"
   ];
   const breakpointColumnsObj = {
-    default: 4,
+    default: 3,
     1100: 3,
-    700: 2,
-    500: 1
+    700: 3,
+    500: 3
   };
+  const [lightboxIdx, setLightboxIdx] = useState(null);
+  const imageUrls = images.map(img => `https://res.cloudinary.com/drfcjlc5n/image/upload/wedding/${img}`);
   return (
     <main className="gallery-main">
       <>
@@ -37,9 +40,11 @@ export default function Weddings() {
               alt={`Vestuvių akimirka ${i + 1}`}
               className="masonry-img"
               style={{ width: '100%', display: 'block', borderRadius: '12px', marginBottom: '16px' }}
+              onClick={() => setLightboxIdx(i)}
             />
           ))}
         </Masonry>
+        <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
         <section className="gallery-prices">
           <h2>Kainos</h2>
           <ul>
