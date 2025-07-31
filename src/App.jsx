@@ -26,7 +26,7 @@ export default function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const dropdownLabelRef = React.useRef(null);
   return (
-    <BrowserRouter basename="/personal-website/MainPage">
+    <BrowserRouter basename="/personal-website">
       <header className="site-header">
         <div className="header-inner">
           {/* Mobile: logo centered, hamburger right */}
