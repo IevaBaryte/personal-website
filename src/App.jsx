@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink, Navigate, Link } from 'react-router-dom';
 import MobileNav from './components/MobileNav';
 import MainPage from './pages/MainPage';
 import Weddings from './pages/Weddings';
@@ -30,7 +30,12 @@ export default function App() {
       <header className="site-header">
         <div className="header-inner">
           {/* Mobile: logo centered, hamburger right */}
-          <img className="site-logo nav-logo mobile-logo" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png" alt="Grelinda Logo" style={{width: '100px'}}/>
+          <img
+  className="site-logo nav-logo mobile-logo"
+  src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png"
+  alt="Grelinda Logo" onClick={() => navigate('/MainPage')}
+  style={{ width: '100px' }}
+/>
           <nav className="main-nav">
             {/* Left side: Pagrindinis, Fotosesijos */}
             <NavLink
@@ -75,7 +80,7 @@ export default function App() {
               </ul>
             </div>
             {/* Center: Logo (desktop only) */}
-            <img className="site-logo nav-logo desktop-logo" src="/images/grelinda-logo.png" alt="Grelinda Logo" style={{width: '100px'}}/>
+            <img className="site-logo nav-logo desktop-logo" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png" onClick={() => navigate('/MainPage')} alt="Grelinda Logo" style={{width: '100px'}}/>
             {/* Right side: Studijos nuoma, Kontaktai */}
             <NavLink
               key={menu[2].path}

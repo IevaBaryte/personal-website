@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const menu = [
   { path: '/', label: 'Pagrindinis' },
   {
-    label: 'Fotosesijos',
+    label: 'Portfolio',
     dropdown: [
       { path: '/vestuves', label: 'Vestuvių fotosesijos' },
       { path: '/krikstynos', label: 'Krikštynų fotosesijos' },
