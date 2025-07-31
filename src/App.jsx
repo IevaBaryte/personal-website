@@ -7,8 +7,6 @@ import Christening from './pages/Christening';
 import PersonalPhotoshoots from './pages/PersonalPhotoshoots';
 import StudioRent from './pages/StudioRent';
 import Contact from './pages/Contact';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import MainPage from "./pages/MainPage";
 
 const menu = [
   { path: '/', label: 'Pagrindinis' },
