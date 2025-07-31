@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import MobileNav from './components/MobileNav';
 import MainPage from './pages/MainPage';
 import Weddings from './pages/Weddings';
@@ -7,11 +7,13 @@ import Christening from './pages/Christening';
 import PersonalPhotoshoots from './pages/PersonalPhotoshoots';
 import StudioRent from './pages/StudioRent';
 import Contact from './pages/Contact';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import MainPage from "./pages/MainPage";
 
 const menu = [
   { path: '/', label: 'Pagrindinis' },
   {
-    label: 'Fotosesijos',
+    label: 'Portfolio',
     dropdown: [
       { path: '/vestuves', label: 'Vestuvių fotosesijos' },
       { path: '/krikstynos', label: 'Krikštynų fotosesijos' },
@@ -26,7 +28,7 @@ export default function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const dropdownLabelRef = React.useRef(null);
   return (
-    <Router>
+    <BrowserRouter basename="/personal-website">
       <header className="site-header">
         <div className="header-inner">
           {/* Mobile: logo centered, hamburger right */}
@@ -107,7 +109,8 @@ export default function App() {
         {mobileNavOpen && <MobileNav onClose={() => setMobileNavOpen(false)} />}
       </header>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<Navigate to="/MainPage" />} />
+        <Route path="/MainPage" element={<MainPage />} />
         <Route path="/vestuves" element={<Weddings />} />
         <Route path="/krikstynos" element={<Christening />} />
         <Route path="/asmenines" element={<PersonalPhotoshoots />} />
@@ -117,6 +120,6 @@ export default function App() {
       <footer className="site-footer">
         <div>© {new Date().getFullYear()} Grelinda Photography. All rights reserved.</div>
       </footer>
-    </Router>
+    </BrowserRouter>
   );
 }
