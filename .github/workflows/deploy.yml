@@ -1,4 +1,4 @@
-name: Deploy Vite to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -21,11 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build with Vite
+      - name: Build the site
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          # jei tavo base yra /personal-website/, ši eilutė padės:
+          destination_dir: personal-website
