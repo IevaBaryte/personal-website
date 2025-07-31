@@ -30,7 +30,7 @@ export default function App() {
       <header className="site-header">
         <div className="header-inner">
           {/* Mobile: logo centered, hamburger right */}
-          <img className="site-logo nav-logo mobile-logo" src="/images/grelinda-logo.png" alt="Grelinda Logo" style={{width: '100px'}}/>
+          <img className="site-logo nav-logo mobile-logo" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png" alt="Grelinda Logo" style={{width: '100px'}}/>
           <nav className="main-nav">
             {/* Left side: Pagrindinis, Fotosesijos */}
             <NavLink
