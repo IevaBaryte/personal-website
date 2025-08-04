@@ -91,11 +91,8 @@ export default function PersonalPhotoshoots() {
     500: 1
   };
   const [lightboxIdx, setLightboxIdx] = useState(null);
-  // Use correct Cloudinary path: if img starts with 'v', it's a full public ID, else prepend 'personal/'
-  const imageUrls = images.map(img => img.startsWith('v')
-    ? `https://res.cloudinary.com/drfcjlc5n/image/upload/${img}`
-    : `https://res.cloudinary.com/drfcjlc5n/image/upload/personal/${img}`
-  );
+  // Prepare full URLs for lightbox (no transformations for max quality)
+  const imageUrls = images.map(img => `https://res.cloudinary.com/drfcjlc5n/image/upload/${img}`);
 
   return (
     <section>
@@ -112,12 +109,8 @@ export default function PersonalPhotoshoots() {
           {images.map((img, i) => (
             <img
               key={img}
-              src={img.startsWith('v')
-                ? `https://res.cloudinary.com/drfcjlc5n/image/upload/w_600,c_fit,f_auto,q_auto/${img}`
-                : `https://res.cloudinary.com/drfcjlc5n/image/upload/w_600,c_fit,f_auto,q_auto/personal/${img}`}
-              srcSet={img.startsWith('v')
-                ? `https://res.cloudinary.com/drfcjlc5n/image/upload/w_300,c_fit,f_auto,q_auto/${img} 300w, https://res.cloudinary.com/drfcjlc5n/image/upload/w_600,c_fit,f_auto,q_auto/${img} 600w`
-                : `https://res.cloudinary.com/drfcjlc5n/image/upload/w_300,c_fit,f_auto,q_auto/personal/${img} 300w, https://res.cloudinary.com/drfcjlc5n/image/upload/w_600,c_fit,f_auto,q_auto/personal/${img} 600w`}
+              src={`https://res.cloudinary.com/drfcjlc5n/image/upload/w_600,c_fit,f_auto,q_auto/${img}`}
+              srcSet={`https://res.cloudinary.com/drfcjlc5n/image/upload/w_300,c_fit,f_auto,q_auto/${img} 300w, https://res.cloudinary.com/drfcjlc5n/image/upload/w_600,c_fit,f_auto,q_auto/${img} 600w`}
               sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
               alt={`Asmeninė fotosesija ${i + 1}`}
               className="masonry-img"

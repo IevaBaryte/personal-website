@@ -72,7 +72,6 @@ export default function Christening() {
             alt={`Krikštynų akimirka ${i + 1}`}
             className="masonry-img"
             style={{ width: '100%', display: 'block', borderRadius: '12px', marginBottom: '16px' }}
-
           />
         ))}
       </Masonry>
