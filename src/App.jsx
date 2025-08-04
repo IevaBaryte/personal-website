@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Navigate, Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { Routes, Route, NavLink, Navigate, Link } from 'react-router-dom';
 import MobileNav from './components/MobileNav';
 import MainPage from './pages/MainPage';
 import Weddings from './pages/Weddings';
@@ -24,18 +24,22 @@ const menu = [
 
 export default function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const dropdownLabelRef = React.useRef(null);
+  const dropdownLabelRef = useRef(null);
+
   return (
-    <BrowserRouter basename="/personal-website">
+    <>
       <header className="site-header">
         <div className="header-inner">
-          {/* Mobile: logo centered, hamburger right */}
-          <img
-  className="site-logo nav-logo mobile-logo"
-  src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png"
-  alt="Grelinda Logo" onClick={() => navigate('/MainPage')}
-  style={{ width: '100px' }}
-/>
+          {/* Mobile logo */}
+          <Link to="/MainPage">
+            <img
+              className="site-logo nav-logo mobile-logo"
+              src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png"
+              alt="Grelinda Logo"
+              style={{ width: '100px', cursor: 'pointer' }}
+            />
+          </Link>
+
           <nav className="main-nav">
             {/* Left side: Pagrindinis, Fotosesijos */}
             <NavLink
@@ -46,10 +50,8 @@ export default function App() {
             >
               {menu[0].label}
             </NavLink>
-            <div
-              className="dropdown"
-              key={menu[1].label}
-            >
+
+            <div className="dropdown" key={menu[1].label}>
               <span
                 className="dropdown-label"
                 tabIndex={0}
@@ -59,9 +61,7 @@ export default function App() {
               >
                 {menu[1].label}
               </span>
-              <ul
-                className="dropdown-menu"
-              >
+              <ul className="dropdown-menu">
                 {menu[1].dropdown.map((sub) => (
                   <li key={sub.path}>
                     <NavLink
@@ -79,9 +79,18 @@ export default function App() {
                 ))}
               </ul>
             </div>
-            {/* Center: Logo (desktop only) */}
-            <img className="site-logo nav-logo desktop-logo" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png" onClick={() => navigate('/MainPage')} alt="Grelinda Logo" style={{width: '100px'}}/>
-            {/* Right side: Studijos nuoma, Kontaktai */}
+
+            {/* Center: Desktop logo */}
+            <Link to="/MainPage">
+              <img
+                className="site-logo nav-logo desktop-logo"
+                src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962213/y9c6irvh6ajb3dmvvs9g.png"
+                alt="Grelinda Logo"
+                style={{ width: '100px', cursor: 'pointer' }}
+              />
+            </Link>
+
+            {/* Right side */}
             <NavLink
               key={menu[2].path}
               to={menu[2].path}
@@ -99,6 +108,7 @@ export default function App() {
               {menu[3].label}
             </NavLink>
           </nav>
+
           <button
             className="hamburger"
             aria-label="Atverti meniu"
@@ -109,10 +119,12 @@ export default function App() {
             <span />
           </button>
         </div>
+
         {mobileNavOpen && <MobileNav onClose={() => setMobileNavOpen(false)} />}
       </header>
+
       <Routes>
-        <Route path="/" element={<Navigate to="/MainPage" />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/MainPage" element={<MainPage />} />
         <Route path="/vestuves" element={<Weddings />} />
         <Route path="/krikstynos" element={<Christening />} />
@@ -120,9 +132,10 @@ export default function App() {
         <Route path="/studija" element={<StudioRent />} />
         <Route path="/kontaktai" element={<Contact />} />
       </Routes>
+
       <footer className="site-footer">
-        <div>© {new Date().getFullYear()} Grelinda Photography. All rights reserved.</div>
+        <div>{new Date().getFullYear()} Grelinda Photography. All rights reserved.</div>
       </footer>
-    </BrowserRouter>
+    </>
   );
 }

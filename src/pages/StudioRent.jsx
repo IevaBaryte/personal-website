@@ -3,11 +3,18 @@ import React from 'react';
 export default function StudioRent() {
   return (
     <section>
-      <h1>Studijos nuoma</h1>
-      <div className="img-gallery">
-        {/* Čia įkelkite studijos nuotraukas */}
-        <img src="/studio1.jpg" alt="Studija" />
-        <img src="/studio2.jpg" alt="Studija" />
+      <section className="gallery-header">
+        <h1 className="gallery-title">Studijos nuoma</h1>
+      </section>
+      <div className="studio-videos">
+        <video controls className="studio-video">
+          <source src="https://res.cloudinary.com/drfcjlc5n/video/upload/v1754049936/e08j8sevxwifpkk7vomq.mp4" type="video/mp4" />
+          Jūsų naršyklė nepalaiko video formato.
+        </video>
+        <video controls className="studio-video">
+          <source src="https://res.cloudinary.com/drfcjlc5n/video/upload/v1754049934/ry493gaump4nsngw4vep.mp4" type="video/mp4" />
+          Jūsų naršyklė nepalaiko video formato.
+        </video>
       </div>
       <h2>Kainos</h2>
       <ul>

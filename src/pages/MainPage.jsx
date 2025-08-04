@@ -4,7 +4,7 @@ export default function MainPage() {
   return (
     <main>
       <section className="hero-section">
-  <img className="hero-bg" src="/images/main-page-picture.jpg" alt="Hero" />
+        <img className="hero-bg" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962280/aau0roo9of6ioonttprb.jpg" alt="Hero"/>
   <div className="hero-center-content">
     <div className="hero-tagline">Jūsų ypatingos akimirkos – mano akimis</div>
   </div>
@@ -12,7 +12,7 @@ export default function MainPage() {
 
       <section className="about-section">
         <div className="about-content">
-          <img className="about-photo" src="/images/my-picture.jpeg" alt="Grelinda" />
+          <img className="about-photo" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962214/pflanwkdh3imarj6akvx.jpg" alt="Grelinda" />
           <div>
             <h2>Šiek tiek apie mane</h2>
             <p>
