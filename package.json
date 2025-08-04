@@ -2,6 +2,7 @@
   "name": "grelinda-photography-website",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://grelinda.lt",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
