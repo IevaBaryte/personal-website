@@ -5,8 +5,13 @@ export default function StudioRent() {
     <section>
       <section className="gallery-header">
         <h1 className="gallery-title">Studijos nuoma</h1>
+        <p className="gallery-subtitle">Studijos erdvė puikiai tinka švęsti baby shower, mergvakarį, gimtadienį, kokią nors edukaciją ar šiaip pasisedėjimą! Erdvė pritaikyta 12 asmenų. Puiki galimybė pasifotografuoti profesionalioje studijoje, galite atsivesti ir savo norimą fotografą, pasisamdyti mane, arba išbandyti savo jėgas ir įsiamžinti sąvarankiškai, naudojantis telefonu ar savo turima fotografijos įranga.
+          <br />
+          <br />
+          Labai laukiu Jūsų ir Jūsų švenčių mano sukurtoje erdvėje!
+        </p>
       </section>
-      <div className="studio-videos">
+      <div className="studio-videos-columns">
         <video controls className="studio-video">
           <source src="https://res.cloudinary.com/drfcjlc5n/video/upload/v1754049936/e08j8sevxwifpkk7vomq.mp4" type="video/mp4" />
           Jūsų naršyklė nepalaiko video formato.

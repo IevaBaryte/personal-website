@@ -9,7 +9,7 @@ import StudioRent from './pages/StudioRent';
 import Contact from './pages/Contact';
 
 const menu = [
-  { path: '/', label: 'Pagrindinis' },
+  { path: '/MainPage', label: 'Pagrindinis' },
   {
     label: 'Portfolio',
     dropdown: [
