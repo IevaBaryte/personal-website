@@ -26,8 +26,13 @@ export default function MainPage() {
       <section className="instagram-section">
         <div className="instagram-title">Instagram</div>
         <div className="instagram-grid">
-          {[1,2,3,4,5,6].map(n => (
-            <img key={n} className="instagram-img" src={`/images/instagram${n}.jpg`} alt={`Instagram ${n}`} />
+          {[
+            'instagram-2.jpg',
+            'instagram-3.jpg',
+            'instagram-4.jpg',
+            'instagram-5.jpg'
+          ].map((file, i) => (
+            <img key={file} className="instagram-img" src={`/images/${file}`} alt={`Instagram ${i+1}`} />
           ))}
         </div>
       </section>

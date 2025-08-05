@@ -37,8 +37,6 @@ export default function Christening() {
     "v1753719099/KRIKŠTAS_24.07_126_uuw0ey.jpg",
     "v1753719099/KRIKŠTAS_24.07_119_aegkb1.jpg",
     "v1753719099/KRIKŠTAS_24.07_121_rgzjsy.jpg",
-    "v1753719099/MARKO_KRIKŠTAS_64_et4g3p.jpg",
-    "v1753719098/MARKO_KRIKŠTAS_66_bu8jid.jpg",
     "v1753717111/ELIJOS_KRIKTYNOS_2_oo4qk3.jpg",
     "v1753717111/ELIJOS_KRIKTYNOS_3_s4a82o.jpg"
   ];
@@ -76,11 +74,14 @@ export default function Christening() {
         ))}
       </Masonry>
       <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
-      <h2>Kainos</h2>
-      <ul>
-        <li>Krikštynų fotosesija nuo 250€</li>
-        <li>Pilna diena – 600€</li>
-      </ul>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+        <h2 style={{ textAlign: 'center' }}>Kainos</h2>
+        <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
+          <li>Krikštynų fotosesija nuo 250€</li>
+          <li>Pilna diena – 600€</li>
+        </ul>
+        <img src="/images/instagram-1.jpg" alt="Krikštynų fotosesija" style={{ maxWidth: '220px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
+      </div>
     </section>
   );
 }

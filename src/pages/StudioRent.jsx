@@ -21,11 +21,13 @@ export default function StudioRent() {
           Jūsų naršyklė nepalaiko video formato.
         </video>
       </div>
-      <h2>Kainos</h2>
-      <ul>
-        <li>Studijos nuoma – 35€/val.</li>
-        <li>Minimalus laikas – 2 val.</li>
-      </ul>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+        <h2 style={{ textAlign: 'center' }}>Kainos</h2>
+        <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
+          <li>Studijos nuoma – 35€/val.</li>
+          <li>Minimalus laikas – 2 val.</li>
+        </ul>
+      </div>
     </section>
   );
 }

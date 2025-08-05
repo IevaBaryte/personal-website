@@ -103,12 +103,15 @@ export default function Weddings() {
           ))}
         </Masonry>
         <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
-        <h2>Kainos</h2>
-        <ul>
-          <li>Vestuvių fotosesija nuo 400€</li>
-          <li>Pilna diena (iki 10 val.) – 1000€</li>
-          <li>Individualus pasiūlymas pagal poreikius</li>
-        </ul>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+          <h2 style={{ textAlign: 'center' }}>Kainos</h2>
+          <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
+            <li>Vestuvių fotosesija nuo 400€</li>
+            <li>Pilna diena (iki 10 val.) – 1000€</li>
+            <li>Individualus pasiūlymas pagal poreikius</li>
+          </ul>
+          <img src="/images/instagram-3.jpg" alt="Vestuvių fotosesija" style={{ maxWidth: '220px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
+        </div>
       </>
     </section>
   );

@@ -120,11 +120,14 @@ export default function PersonalPhotoshoots() {
           ))}
         </Masonry>
         <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
-        <h2>Kainos</h2>
-        <ul>
-          <li>Asmeninė fotosesija – 120€ (1 val.)</li>
-          <li>Poros fotosesija – 150€ (1 val.)</li>
-        </ul>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+          <h2 style={{ textAlign: 'center' }}>Kainos</h2>
+          <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
+            <li>Asmeninė fotosesija – 120€ (1 val.)</li>
+            <li>Poros fotosesija – 150€ (1 val.)</li>
+          </ul>
+          <img src="/images/instagram-2.jpg" alt="Fotosesijos" style={{ maxWidth: '220px', width: '100%', borderRadius: '10px', marginBottom: '1.2rem' }} />
+        </div>
       </>
     </section>
   );
