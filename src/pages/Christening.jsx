@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BackToTopButton from '../components/BackToTopButton';
 import Masonry from 'react-masonry-css';
 import GalleryLightbox from '../components/GalleryLightbox';
 import '../christening-gallery.css';
@@ -83,6 +84,7 @@ export default function Christening() {
         </p>
         <img src="/images/krikstynos-kainos.png" alt="Krikštynų kainoraštis" style={{ maxWidth: '500px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
       </div>
+      <BackToTopButton />
     </section>
   );
 }

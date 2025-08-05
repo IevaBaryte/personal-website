@@ -15,11 +15,11 @@ export default function MainPage() {
           <img className="about-photo" src="https://res.cloudinary.com/drfcjlc5n/image/upload/v1753962214/pflanwkdh3imarj6akvx.jpg" alt="Grelinda" />
           <div>
             <h2>Šiek tiek apie mane</h2>
-            <p>
-              Sveiki! Esu Grelinda – profesionali fotografė iš Panevėžio. Mano tikslas – įamžinti jūsų svarbiausias gyvenimo akimirkas jautriai, estetiškai ir su meile. 
-              <br />
-              Specializuojuosi vestuvių, krikštynų, asmeninių fotosesijų srityse bei siūlau studijos nuomos paslaugas. Kviečiu susisiekti ir kartu sukurti jūsų istoriją nuotraukose.
-            </p>
+            <p>Sveiki! Esu <strong>Grelinda</strong> – Greta Vizbarė, fotografė iš Panevėžio.</p>
+            <p>Fotografija man – ne tik darbas, bet ir nuoširdus būdas fiksuoti tai, kas tikra: šypsenas, žvilgsnius, emocijas ir ryšį tarp žmonių. Labiausiai širdį glosto galimybė įamžinti <strong>vestuvių akimirkas</strong> – šią ypatingą dviejų žmonių bendro gyvenimo pradžią.</p>
+            <p>Dirbu įvairiose srityse: fotografuoju <strong>vaikus, suaugusiuosius, šeimas</strong>, o kartais į studiją atkeliauja ir <strong>keturkojai šeimos nariai</strong> – visiems atsiranda vietos mano kadruose.</p>
+            <p><strong>Sezoninių fotosesijų metu</strong> kviečiu pasinerti į šventinę atmosferą: Velykos, Kalėdos, Valentino diena ir dar daug kitų smagių progų tampa puikia galimybe sustabdyti laiką.</p>
+            <p>Man svarbiausia – kad jaustumėtės jaukiai, o nuotraukos neštų ne tik prisiminimus, bet ir jausmą.</p>
           </div>
         </div>
       </section>
@@ -27,12 +27,32 @@ export default function MainPage() {
         <div className="instagram-title">Instagram</div>
         <div className="instagram-grid">
           {[
-            'instagram-2.jpg',
-            'instagram-3.jpg',
-            'instagram-4.jpg',
-            'instagram-5.jpg'
-          ].map((file, i) => (
-            <img key={file} className="instagram-img" src={`/images/${file}`} alt={`Instagram ${i+1}`} />
+            {
+              file: 'instagram-2.jpg',
+              url: 'https://www.instagram.com/p/DMvXSqwtUMy/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=='
+            },
+            {
+              file: 'instagram-3.jpg',
+              url: 'https://www.instagram.com/p/DMuA8NTCp1O/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+            },
+            {
+              file: 'instagram-4.jpg',
+              url: 'https://www.instagram.com/p/DMsGhKht3jL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+            },
+            {
+              file: 'instagram-5.jpg',
+              url: 'https://www.instagram.com/p/DMfqU7WtUyT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+            },
+          ].map(({ file, url }, i) => (
+            <a
+              key={file}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Atidaryti Instagram nuotrauką ${i + 1}`}
+            >
+              <img className="instagram-img" src={`/images/${file}`} alt={`Instagram ${i+1}`} />
+            </a>
           ))}
         </div>
       </section>

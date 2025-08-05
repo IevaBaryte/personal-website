@@ -17,11 +17,9 @@ const menu = [
 
 export default function MobileNav({ onClose }) {
   const [openDropdown, setOpenDropdown] = useState(null);
-  // Focus trap and ESC support
   React.useEffect(() => {
     function handleKeyDown(e) {
       if (e.key === 'Escape') onClose();
-      // Trap focus inside nav
       if (e.key === 'Tab') {
         const focusable = document.querySelectorAll('.mobile-nav button, .mobile-nav a');
         if (!focusable.length) return;
@@ -37,7 +35,6 @@ export default function MobileNav({ onClose }) {
       }
     }
     document.addEventListener('keydown', handleKeyDown);
-    // Focus close button on mount
     setTimeout(() => {
       const btn = document.querySelector('.close-mobile-nav');
       if (btn) btn.focus();

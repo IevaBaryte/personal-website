@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BackToTopButton from '../components/BackToTopButton';
 import Masonry from 'react-masonry-css';
 import GalleryLightbox from '../components/GalleryLightbox';
 
@@ -132,6 +133,7 @@ export default function PersonalPhotoshoots() {
           <img src="/images/asmenines-kainos.png" alt="Fotosesijos" style={{ maxWidth: '500px', width: '100%', borderRadius: '10px', marginBottom: '1.2rem' }} />
         </div>
       </>
+      <BackToTopButton />
     </section>
   );
 }

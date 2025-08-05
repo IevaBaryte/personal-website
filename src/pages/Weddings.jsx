@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BackToTopButton from '../components/BackToTopButton';
 import Masonry from 'react-masonry-css';
 import GalleryLightbox from '../components/GalleryLightbox';
 
@@ -113,6 +114,7 @@ export default function Weddings() {
           <img src="/images/vestuviu-kainos.png" alt="Vestuvių fkainoraštis" style={{ maxWidth: '500px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
         </div>
       </>
+      <BackToTopButton />
     </section>
   );
 }

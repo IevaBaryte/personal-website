@@ -142,7 +142,7 @@ export default function App() {
             <i className="fab fa-facebook" style={{ color: '#232323', fontSize: '2.75rem' }}></i>
           </a>
         </div>
-        <div>{new Date().getFullYear()} Grelinda Photography. All rights reserved.</div>
+        <div>&copy; {new Date().getFullYear()} Grelinda Photography. All rights reserved.</div>
       </footer>
     </>
   );
