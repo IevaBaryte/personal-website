@@ -56,6 +56,18 @@ export default function MainPage() {
           ))}
         </div>
       </section>
+      <section className="partners-section">
+        <h2 className="gallery-title" style={{ textAlign: 'center' }}>Partneriai</h2>
+        <br/>
+        <div className="partners-logos">
+          <a href="https://www.facebook.com/VisionMedial" target="_blank" rel="noopener noreferrer" aria-label="VisionMedial Facebook">
+            <img src="/images/Logo-concept-1.png" alt="Partneris 1" className="partner-logo" />
+          </a>
+          <a href="https://fotoknyga.com" target="_blank" rel="noopener noreferrer" aria-label="Fotoknyga">
+            <img src="/images/fotoknyga-by-sandra.avif" alt="Partneris 2" className="partner-logo" />
+          </a>
+        </div>
+      </section>
     </main>
   );
 }

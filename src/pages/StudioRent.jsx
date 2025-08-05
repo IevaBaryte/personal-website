@@ -24,8 +24,9 @@ export default function StudioRent() {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
         <h2 style={{ textAlign: 'center' }}>Kainos</h2>
         <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
-          <li>Studijos nuoma – 35€/val.</li>
+          <li>Studijos nuomos kainos derinamos individualiai</li>
           <li>Minimalus laikas – 2 val.</li>
+          <li>Už papildomą kainą, galimas ir studijos dekoras pagal Jūsų šventę.</li>
         </ul>
       </div>
     </section>
