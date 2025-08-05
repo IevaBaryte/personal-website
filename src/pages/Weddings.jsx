@@ -64,7 +64,6 @@ export default function Weddings() {
     "v1753960122/d29a5bx5mvz9ykgpuapn.jpg",
     "v1753960123/kntcrotahpchmxirjtmp.jpg",
     "v1753960125/g13iuvixzlqjp5tbkz3b.jpg",
-    "v1753960126/n8kr4tgxmft7qz00ueq9.jpg",
     "v1753960128/jtpxyksspkjy6oa7k02y.jpg"
   ];
   const breakpointColumnsObj = {
@@ -74,7 +73,6 @@ export default function Weddings() {
     500: 1
   };
   const [lightboxIdx, setLightboxIdx] = useState(null);
-  // Prepare full URLs for lightbox (no transformations for max quality)
   const imageUrls = images.map(img => `https://res.cloudinary.com/drfcjlc5n/image/upload/${img}`);
 
   return (
@@ -104,13 +102,15 @@ export default function Weddings() {
         </Masonry>
         <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
-          <h2 style={{ textAlign: 'center' }}>Kainos</h2>
+          <h2 className="gallery-title">Kainos</h2>
+          <p className="gallery-subtitle">
           <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
-            <li>Vestuvių fotosesija nuo 400€</li>
-            <li>Pilna diena (iki 10 val.) – 1000€</li>
-            <li>Individualus pasiūlymas pagal poreikius</li>
+            <li>Vestuvių fotosesijų kainos svyruoja pagal Jūsų poreikius</li>
+            <li>Labai skatinu įsivertinti savo poreikius, taip padėsite sau išsirinkti tinkamiausią variantą</li>
+            <li>Esant poreikiui - vykstame ir į užsienį!</li>
           </ul>
-          <img src="/images/instagram-3.jpg" alt="Vestuvių fotosesija" style={{ maxWidth: '220px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
+          </p>
+          <img src="/images/vestuviu-kainos.png" alt="Vestuvių fkainoraštis" style={{ maxWidth: '500px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
         </div>
       </>
     </section>

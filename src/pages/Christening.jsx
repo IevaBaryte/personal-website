@@ -75,12 +75,13 @@ export default function Christening() {
       </Masonry>
       <GalleryLightbox images={imageUrls} currentIndex={lightboxIdx} onClose={() => setLightboxIdx(null)} />
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
-        <h2 style={{ textAlign: 'center' }}>Kainos</h2>
+        <h2 className="gallery-title">Kainos</h2>
+        <p className="gallery-subtitle">
         <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
-          <li>Krikštynų fotosesija nuo 250€</li>
-          <li>Pilna diena – 600€</li>
+          <li>Krikštynų fotosesija gali vykti bet kur, Jūsų pasirinktoje vietoje.</li>
         </ul>
-        <img src="/images/instagram-1.jpg" alt="Krikštynų fotosesija" style={{ maxWidth: '220px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
+        </p>
+        <img src="/images/krikstynos-kainos.png" alt="Krikštynų kainoraštis" style={{ maxWidth: '500px', width: '100%', borderRadius: '10px', margin: '1.2rem 0' }} />
       </div>
     </section>
   );

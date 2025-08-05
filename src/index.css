@@ -100,7 +100,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background: var(--background);
+  background: #fff !important;
   color: var(--text);
 }
 
@@ -751,7 +751,7 @@ section {
 }
 
 footer {
-  background: #fffaf6;
+  background: #faf2ec;
   color: black;
   text-align: center;
   padding: 2rem 1rem 1rem 1rem;
@@ -1050,7 +1050,7 @@ html, body {
 main {
   position: relative;
   z-index: 2;
-  background: #fff;
+  background: #fff !important;
   box-sizing: border-box;
 }
 .hero-center-content {
@@ -1185,8 +1185,8 @@ main {
 .instagram-img {
   flex: 1 1 0;
   min-width: 0;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: 0;
   aspect-ratio: 1/1;
   object-fit: cover;

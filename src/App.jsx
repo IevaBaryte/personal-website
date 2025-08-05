@@ -134,6 +134,14 @@ export default function App() {
       </Routes>
 
       <footer className="site-footer">
+        <div style={{ marginBottom: '1.2rem', display: 'flex', justifyContent: 'center', gap: '2.5rem' }}>
+          <a href="https://www.instagram.com/grelinda.photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: '#232323', fontSize: '2.75rem', display: 'flex', alignItems: 'center' }}>
+            <i className="fab fa-instagram" style={{ color: '#232323', fontSize: '2.75rem' }}></i>
+          </a>
+          <a href="https://www.facebook.com/GreLindaPhotography" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: '#232323', fontSize: '2.75rem', display: 'flex', alignItems: 'center' }}>
+            <i className="fab fa-facebook" style={{ color: '#232323', fontSize: '2.75rem' }}></i>
+          </a>
+        </div>
         <div>{new Date().getFullYear()} Grelinda Photography. All rights reserved.</div>
       </footer>
     </>
